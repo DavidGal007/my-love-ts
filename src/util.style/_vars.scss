@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap');
+//font-family: 'Playfair Display', serif;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/*________VARS__________*/
+$minWidth: 320;
+$maxWidth: 1440;
+$maxWidthContainer: 1270;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+/*_____________END_______*/
+
+/*COLORS*/
+$ColorYell: #FFE145;
+$title: #402318;
+$dark: #2C2A2B;
+$Line: #9093a69c;
+//FONT SIZE && LINE HEIGHT
+
+
+$line-height--base: 1.428571429;
+$normal-letter-spacing: .2rem;
+$line-height-responsive: 120%;
+$font-size--base: 16px;
+$font-size__coefficient--large: 2.5;
+$font-size__coefficient--normal: 1.5;
+$font-size__coefficient--small: 1;
+
+$font-size--large: round($font-size--base * $font-size__coefficient--large); // 40px
+$font-size--normal: round($font-size--base * $font-size__coefficient--normal); // 24px
+$font-size--small: round($font-size--base * $font-size__coefficient--small); // 16px
+
+$line-height--computed: round($font-size--base * $line-height--base);
+$line-height--large: floor($line-height--computed * $font-size__coefficient--large); // 55px
+$line-height--normal: floor($line-height--computed * $font-size__coefficient--normal); // 35px
+$line-height--small: floor($line-height--computed * $font-size__coefficient--small); // 23px
+
+$font-family__sans: 'Playfair Display', serif;
+$font-weight__sans__regular: 400;
+$font-weight__sans__bold: 700;
+$max-blend: multiply;
+input::-webkit-input-placeholder {
+  color: #222;
+}
+input:-moz-placeholder {
+  color: #222;
+}
+.font-base {
+  font-family: $font-family__sans;
+}
+._ibg {
+    object-fit: cover;
+    height: auto;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+//for Bg image
+.ibg{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative; 
+}
+.ibg img{width: 0; height: 0; position: absolute; top: 0; left: 0; opacity: 0; visibility: hidden;}
+
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+    @if $type == 1 {
+        //menak erb poqra contianeric
+        #{$property}: $startSize + px;
+        @media (max-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+        }
+    } @else if $type == 2 {
+        //menak erb meca contianeric
+        #{$property}: $startSize + px;
+        @media (min-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+        }
+
+    } @else {
+        //misht 
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+}
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+$font-size__coefficient--large--mobile: 2;
+
+@mixin text($font-family, $font-size, $font-weight) {
+  @if $font-size == $font-size--large {
+    @include mobile {
+      font-size: round($font-size--base * $font-size__coefficient--large--mobile); // 32px
+      line-height: floor($line-height--computed * $font-size__coefficient--large--mobile);// 46px
+    }
+  }
+}
+
+@mixin text($font-family, $font-size, $font-weight) {
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    letter-spacing: $normal-letter-spacing;
+  
+    @if $font-size == $font-size--large {
+      line-height: $line-height--large;
+    } @else if $font-size == $font-size--normal {
+      line-height: $line-height--normal;
+    } @else if $font-size == $font-size--small {
+      line-height: $line-height--small;
+    } @else {
+      line-height: floor($font-size * $line-height--base);
+    }
+}

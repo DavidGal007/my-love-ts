@@ -1,0 +1,114 @@
+@import "./cart.scss";
+
+.up-pdp {
+  &__wrapper {
+    padding: 3em;
+  }
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+  }
+  &__image {
+    max-width: 450px;
+    background-color: #e4e2e3;
+    height: 450px;
+  }
+  &-product__img {
+    width: 100%;
+    cursor: zoom-in;
+    object-fit: contain;
+    height: auto;
+  }
+  &__details {
+    margin-left: 30px;
+  }
+  &__promotions-pill-label {
+    display: inline-block;
+    margin-bottom: 13px;
+    background: #f12b2c;
+    border-radius: 4px;
+    line-height: 1;
+    word-break: break-all;
+    padding: 2px 6px;
+  }
+  &__promotions-lable {
+    display: inline-block;
+    color: #fff;
+    font-weight: 500;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  &__title {
+    font-weight: 600;
+    @include adaptive-value("font-size", 28, 20, 18);
+    line-height: 120%;
+    color: $dark;
+  }
+}
+.ui-pdp {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  &__description {
+    margin-top: 2em;
+  }
+  
+  &__star-comp {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+  }
+  &__category {
+    max-width: 87px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.165em;
+    color: #50cc98;
+    padding-right: 12px;
+    border-right: 1px solid #BFBFBF;
+  }
+  &__star-comp {
+    padding-left: 12px;
+  }
+  &__reviews {
+    display: inline-block;
+    color: $dark;
+    font-weight: 400;
+    padding: 2px 0;
+  }
+}
+.ui-pdp__desc-title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: $dark;
+  margin: 12px 0;
+}
+
+.ui-list__item {
+    font-weight: 300;
+font-size: 15px;
+line-height: 21px;
+margin-bottom: 1.2rem;
+letter-spacing: 0.02em;
+color: $dark;
+list-style: inside !important;
+}
+.star {
+    position: relative;
+    cursor: pointer;
+  }
+  .stars_radio-input:checked ~ svg {
+    fill: #F4B30C;
+  }
+  .stars_radio-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+  }

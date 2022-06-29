@@ -1,0 +1,247 @@
+@import "../util.style/vars";
+.card {
+  margin-top: 100px;
+  &__lists {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__list {
+    font-weight: 700;
+    font-size: 2rem;
+    color: $dark;
+  }
+  &__trash {
+    display: flex;
+    align-items: center;
+  }
+  &__trash svg {
+    margin-right: 0.3em;
+  }
+  &__trash span {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 19px;
+    color: #b6b6b6;
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+  @media (min-width: $md3+px) {
+    margin: 0 auto;
+    max-width: 1200px;
+    font-weight: 400;
+    background-color: #fff;
+    height: auto;
+  }
+  &__index {
+    //@media (min-width: $md3+px) {
+      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 30%);
+      background-color: #fff;
+      padding: 3rem;
+      padding-bottom:50px;
+      height: auto;
+      position: relative;
+    
+  }
+  &__tabs {
+    min-height: 44px;
+    @media (min-width: $md3+px) {
+      background-color: transparent;
+      border-bottom: 1px solid #e6e6e6;
+    }
+  }
+}
+//@media (min-width: $md3+px) {
+  .item {
+    padding: 44px 0 48px;
+    border-bottom: 1px solid #e6e6e6;
+    &__block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 27px;
+      color: $dark;
+
+      letter-spacing: 0.01em;
+    }
+    &__price {
+      flex-basis: 150px;
+      text-align: right;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 22px;
+      color: $dark;
+    }
+  }
+@media (max-width: $md3+px) {
+  .item {
+    
+    &__block {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+    }
+    &__remove {
+      grid-column: 2/-1;
+      justify-self: end;
+    }
+    
+  }
+  .summary {
+    &__inner {
+      display: block !important;
+    }
+    // &__total {
+    //   width: 1000px;
+    //   background-color: #a4a4a4;
+    //   display: inline-flex;
+    //   align-items: center;
+    //   position: fixed;
+    //   height: 120px;
+    //   justify-content: space-between;
+    //   bottom: 30px;
+    // }
+    &__tag {
+      text-align: right;
+    }
+    .fs-mut {
+      display: flex;
+    flex-direction: column;
+    }
+    &__count {
+      margin-bottom: 2em;
+      
+    }
+  }
+}
+.fs-mut {
+  width: 100%;
+  margin: 0 auto;
+    min-height: 90px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+.item {
+
+  &__subtitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: #8d8d8d;
+  }
+  &__img {
+    margin-right: 1rem;
+  }
+  &__img img {
+    width: 80px;
+    background-color: transparent;
+  }
+  &__quantitie {
+    display: flex;
+    align-items: center;
+  }
+}
+.item-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.btn-minus svg,
+.btn-plus svg,
+.item__remove {
+  cursor: pointer;
+}
+.quantitie {
+  width: 45px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 0.2em 0;
+}
+
+//@media (min-width: $md3+px) {
+  .summary {
+    padding: 1.5rem;
+    min-height: 125px;
+    &__inner {
+      display: flex;
+      align-items: flex-end;
+    }
+    &__count {
+      flex-grow: 1;
+    }
+    &__length {
+      margin-bottom: 40px;
+    }
+    &__tag {
+      margin-bottom: 40px;
+    }
+
+    &__goback-btn {
+      display: inline-block;
+      background-color: transparent !important;
+      border: 1px solid #cacaca;
+      transition: 0.4s;
+      font-size: 1rem;
+      color: #cacaca;
+      svg {
+        margin-right: 7px;
+      }
+      svg path {
+        transition: 0.4s;
+      }
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: #cacaca !important;
+          color: #a4a4a4;
+          svg path {
+            stroke: #a4a4a4;
+          }
+        }
+      }
+    }
+    &__pay-btn {
+      background-color: #205949;
+      color: #fff;
+      transition: 0.4s;
+      display: inline-block;
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: #217343;
+        }
+      }
+    }
+  }
+
+.text {
+  font-style: normal;
+  font-weight: 400;
+  color: $dark;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+}
+.same-style {
+  appearance: none;
+  border-radius: 30px;
+  padding: 14px 2.5em;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+}
+.button--outline {
+  background: none;
+}
