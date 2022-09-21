@@ -38,7 +38,7 @@ const CardItem: React.FC<CartItemProps> = ({
       <div className="item__content">
         <div className="item__block">
           <div className="item__img">
-             <img src={`${process.env.REACT_APP_API_URL}${imageUrl}`} alt={title} /> 
+             <img src={`${process.env.REACT_APP_IMG_URL}${imageUrl}`} alt={title} />
           </div>
           <div className="item__description">
             <h2 className="item__title">{title}</h2>
