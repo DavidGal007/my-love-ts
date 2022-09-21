@@ -1,15 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Home from "../pages/Home";
 
 const MainLayout: React.FC = () => {
   return (
-    <div className="main">
+    <div className="wrapper">
       <Header />
-      <div className="fm-content">
+      <main className="fm-content">
         <Outlet />
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 };

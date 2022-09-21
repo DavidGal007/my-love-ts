@@ -1,6 +1,5 @@
 @import "../util.style/vars";
 .card {
-  margin-top: 100px;
   &__lists {
     display: flex;
     align-items: center;
@@ -33,13 +32,13 @@
       }
     }
   }
-  @media (min-width: $md3+px) {
-    margin: 0 auto;
-    max-width: 1200px;
-    font-weight: 400;
-    background-color: #fff;
-    height: auto;
-  }
+  // @media (min-width: $md3+px) {
+  //   margin: 0 auto;
+  //   max-width: 1200px;
+  //   font-weight: 400;
+  //   background-color: #fff;
+  //   height: auto;
+  // }
   &__index {
     //@media (min-width: $md3+px) {
       box-shadow: 0 1px 2px 0 rgb(0 0 0 / 30%);
@@ -99,8 +98,12 @@
     
   }
   .summary {
+    padding: 1.5rem 0 0 0;
     &__inner {
       display: block !important;
+    }
+    &__pay-btn {
+      margin-left: 20px;
     }
     // &__total {
     //   width: 1000px;
@@ -113,12 +116,10 @@
     //   bottom: 30px;
     // }
     &__tag {
-      text-align: right;
+      
+      display: inline-block;
     }
-    .fs-mut {
-      display: flex;
-    flex-direction: column;
-    }
+    
     &__count {
       margin-bottom: 2em;
       
@@ -126,12 +127,8 @@
   }
 }
 .fs-mut {
-  width: 100%;
-  margin: 0 auto;
-    min-height: 90px;
-    padding: 0 20px;
-    position: relative;
-    z-index: 2;
+  text-align: right;
+padding: 0 5px;
 }
 .item {
 
@@ -143,7 +140,7 @@
     color: #8d8d8d;
   }
   &__img {
-    margin-right: 1rem;
+    margin-bottom: 1rem;
   }
   &__img img {
     width: 80px;

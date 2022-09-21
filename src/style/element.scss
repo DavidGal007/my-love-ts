@@ -34,58 +34,15 @@
     line-height: $line-height-responsive;
     font-weight: 300;
     color: $dark;
-    margin-bottom: 2em;
   }
+}
+.elment-wrapper__block, .advantage-wrapper__inner {
+   align-items: center;
 }
 @media (max-width: $md3+px) {
-  .elment-wrapper__block {
-    flex-direction: column-reverse;
-  }
-  .advantage-wrapper__inner {
-    flex-direction: column;
-    margin-top: 42px;
-  }
-}
-.bloge-wrapper {
-  margin: 100px 0 0 0;
-  &__attr {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-  &__title {
-    font-style: normal;
-    font-weight: bold;
-    @include adaptive-value("font-size", 40, 30, 20);
-    line-height: $line-height--base;
-    text-transform: capitalize;
-    letter-spacing: $normal-letter-spacing;
-    color: $dark;
-  }
-
-  &__inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 45px;
-  }
-  &__elements {
-    max-width: 300px;
-  }
-  &__image {
-    margin-bottom: 25px;
-  }
-  &__subtitle {
-    @include adaptive-value("font-size", 26, 23, 20);
-    line-height: $line-height-responsive;
-    color: $dark;
-    margin-bottom: 1rem;
-  }
-  &__description {
-    @include adaptive-value("font-size", 18, 17, 16);
-    font-weight: 300;
-    line-height: $line-height--base;
-    text-transform: capitalize;
-    color: $dark;
+  
+  .elment-wrapper__content {
+    margin-bottom: 2rem;
   }
 }
 footer {
@@ -100,9 +57,7 @@ footer {
     @media (max-width: $md2+px) {
       grid-template-columns: repeat(2, 1fr);
     }
-    @media (max-width: $md4+px) {
-      grid-template-columns: repeat(1, 1fr);
-    }
+    
   }
   // &__element {
 

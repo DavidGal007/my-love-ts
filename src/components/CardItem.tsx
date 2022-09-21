@@ -2,10 +2,10 @@ import React from "react";
 import { useAppDispatch } from "../app/hooks";
 import { addItem, minusItem, removeItem } from "../features/cart/cartSlice";
 import { CartItem as CartItemType } from "../features/cart/type";
+
 type CartItemProps = {
   id: number;
   title: string;
-  type: string;
   size: number;
   price: number;
   count: number;
@@ -14,7 +14,6 @@ type CartItemProps = {
 const CardItem: React.FC<CartItemProps> = ({
   id,
   title,
-  type,
   size,
   price,
   count,
@@ -39,11 +38,11 @@ const CardItem: React.FC<CartItemProps> = ({
       <div className="item__content">
         <div className="item__block">
           <div className="item__img">
-            <img src={imageUrl} alt="item-img" />
+             <img src={'http://localhost:5000/' + imageUrl } alt="item-img" /> 
           </div>
           <div className="item__description">
             <h2 className="item__title">{title}</h2>
-            <h3 className="item__subtitle">тонкое тесто, 26 см.</h3>
+            <h3 className="item__subtitle">{size}</h3>
           </div>
           <div className="item__quantitie">
             <div className="btn-minus">

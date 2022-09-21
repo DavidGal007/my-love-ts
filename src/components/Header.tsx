@@ -4,9 +4,7 @@ import Logo from "../assets/images/J-Shop.png";
 import Search from "../assets/images/search.svg";
 import Card from "../assets/images/card.svg";
 import User from "../assets/images/user.svg";
-import Avatar from "../assets/images/davo.jpg";
 import { useAppSelector } from "../app/hooks";
-import { selectCart, selectCartItemById } from "../features/cart/selectors";
 
 const Header: React.FC = () => {
   const [burger, setBurger] = useState(false);
@@ -29,11 +27,11 @@ const Header: React.FC = () => {
             <ul className="header-nav__lists">
               <li className="header-nav__list">
                 <Link className="header-nav__link" to="/">
-                  Categories
+                  Home
                 </Link>
               </li>
               <li className="header-nav__list">
-                <Link className="header-nav__link" to="/about">
+                <Link className="header-nav__link" to="/">
                   About
                 </Link>
               </li>
@@ -74,18 +72,7 @@ const Header: React.FC = () => {
       <aside className={`header-nav__block ${burger ? "burger-mobail" : ""}`}>
         <div className="burger-wrapper">
           <p className="paragraph__dashboard">Your Bag is empty.</p>
-          {/* <div className="header-mobail">
-            <div className="header-mobail__avatar">
-              <div className="header-mobail__user-img">
-                <img className="avatar _ibg" src={Avatar} alt="avatar" />
-              </div>
-              <div className="header-mobail__title">
-                <span className="header-mobail__user-subtitle">Good Day!</span>
-                <div className="header-mobail__user-name">G. David</div>
-              </div>
-            </div>
-          </div> */}
-        
+
           <div className="config-logout">
             <ul className="config-navbar__lists">
               <li className="config-navbar__list">

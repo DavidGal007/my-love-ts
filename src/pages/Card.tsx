@@ -1,27 +1,28 @@
 import React from "react";
 import "../style/cart.scss";
-import ItemImg from "../assets/images/product.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { CartEmpty } from "../components/CardEmpty";
 import { clearItems } from "../features/cart/cartSlice";
 import CardItem from "../components/CardItem";
 
 const Card: React.FC = () => {
-  const navigate = useNavigate();
   const { totalPrice, items } = useAppSelector((state) => state.cart);
+  console.log(items);
   const dispatch = useAppDispatch();
   const isMount = React.useRef(false);
   const totalCount = items.reduce(
     (sum: number, item: any) => sum + item.count,
     0
   );
+  console.log(process.env.PUBLIC_URL);
   React.useEffect(() => {
     if (isMount.current) {
       const json = JSON.stringify(items);
       localStorage.setItem("cart", json);
     }
     isMount.current = true;
+    window.scrollTo(0, 0);
   }, [items]);
   const RemoveItemsToCart = () => {
     if (window.confirm("Confirm")) {

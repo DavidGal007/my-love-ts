@@ -4,7 +4,7 @@ export type Product = {
   price: number;
   category: string;
   description: string;
-  images: Object;
+  images: string;
   likes?: Object;
   ratings?: number;
   Stock?: number;
@@ -12,9 +12,9 @@ export type Product = {
 };
 
 export type SearchProductParams = {
-  sort: string;
-  category: string;
-  search: string;
+  sortBy: string;
+  category: any;
+  search?: any;
   page: number;
 };
 

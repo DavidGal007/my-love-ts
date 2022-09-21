@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { api } from "../../app/instance";
 import { Product, ProductSliceStatus, SearchProductParams } from "./types";
-import pickBy from "lodash/pickBy";
-import identity from "lodash/identity";
-import axios from "axios";
+
 
 const initialState: ProductSliceStatus = {
   items: [],
@@ -12,23 +11,26 @@ const initialState: ProductSliceStatus = {
 export const fetchProducts = createAsyncThunk<Product[], SearchProductParams>(
   "product/fetchProductStatus",
   async (params) => {
-    const { category, sort, page, search } = params;
-    console.log(params, 4444);
-    const {data} = await axios.get(
-      `http://localhost:5000/api/products?limit=${page*4}&${category}&${sort}&title[regex]=${search}`,
-      {
-        params: pickBy(
-          {
-            page,
-            category,
-            search,
-            sort,
-          },
-          identity
-        ),
-      }
+    const { category, sortBy, page, search } = params;
+    
+    const {data} = await api.get(
+      `products?limit=${page*8}&${category}&${sortBy}&title[regex]=${search}`,
+      // {
+      //   params: pickBy(
+      //     {
+      //       page,
+      //       category,
+      //       search,
+      //       sort,
+      //     },
+      //     identity
+      //   ),
+      // }
     );
+    console.log(data.result);
     return data.products;
+    
+    
   }
 );
 

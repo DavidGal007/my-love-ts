@@ -5,7 +5,6 @@ import Facebook from "../assets/images/facebook.svg";
 import Twitter from "../assets/images/twitter.svg";
 import LinkedIn from "../assets/images/linked.svg";
 import "../style/main.scss";
-import { Link } from "react-router-dom";
 
 const Main: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -74,7 +73,9 @@ const Main: React.FC = () => {
               <div className="alianze-container__block">
                 <div className="alianze-container__advanced">
                   <div className="alianze-container__modal">18kts</div>
-                  <p className="alianze-container__subtitle">Garantina permanente</p>
+                  <p className="alianze-container__subtitle">
+                    Garantina permanente
+                  </p>
                 </div>
               </div>
             </div>
@@ -84,15 +85,19 @@ const Main: React.FC = () => {
           <div className="jewelery-content__fixed">
             <div className="jewelery-content__icons">
               <div className="jewelery-content__icon">
-                <Link to="/about">
+                <a target='_blank' href="https://www.instagram.com/d_a__ve/">
                   <img src={Facebook} alt="facebook" />
-                </Link>
+                </a>
               </div>
               <div className="jewelery-content__icon">
-                <img src={Twitter} alt="twitter" />
+              <a target='_blank' href="https://www.instagram.com/d_a__ve/">
+                  <img src={Twitter} alt="twitter" />
+                </a>
               </div>
               <div className="jewelery-content__icon">
-                <img src={LinkedIn} alt="linkedIn" />
+              <a target='_blank' href="https://www.instagram.com/d_a__ve/">
+                  <img src={LinkedIn} alt="linkedIn" />
+                </a>
               </div>
             </div>
             <div className="jewelery-range">

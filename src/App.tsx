@@ -1,23 +1,14 @@
-import React, { Suspense, useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "./app/hooks";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import { fetchProducts } from "./features/product/productSlice";
 import MainLayout from "./layouts/MainLayout";
 import SignUp from "./pages/SignUp";
 import Card from "./pages/Card";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Details from "./pages/Details";
 import { NotFound } from "./pages/NotFound";
 
 function App() {
-  const dispatch = useAppDispatch();
-  useEffect(() => {
-    console.log(
-      dispatch(fetchProducts({ sort: "", category: "", page: 1, search: "" }))
-    );
-  }, []);
-
+  
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
@@ -27,14 +18,6 @@ function App() {
           element={
             <Suspense fallback={<div>Идёт загрузка корзины...</div>}>
               <Card />
-            </Suspense>
-          }
-        />
-        <Route
-          path="about"
-          element={
-            <Suspense fallback={<div>Идёт загрузка...</div>}>
-              <About />
             </Suspense>
           }
         />

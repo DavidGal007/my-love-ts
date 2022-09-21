@@ -1,6 +1,10 @@
 @import '_vars.scss';
 @import 'reset.style.scss';
-
+button {
+   border: 0;
+   text-align: center;
+   //box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
 .username {
   white-space: nowrap; /* Запрещаем перенос строк */
   overflow: hidden; /* Обрезаем все, что не помещается в область */
@@ -22,9 +26,6 @@
 }
 .card__img {
     background-color: grey;
-}
-.element {
-    overflow-y: auto;
 }
 .scroll_wrapper {
     scrollbar-gutter: stable;
