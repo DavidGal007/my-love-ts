@@ -40,7 +40,7 @@ const Products: React.FC<Product> = ({
   return (
     <div className="products-wrapper__elements">
       <div className="product__img">
-        <img className="_ibg" src={'http://localhost:5000/' + images} alt={title} />
+        <img className="_ibg" src={`${process.env.REACT_APP_API_URL}${images}`} alt={title} />
       </div>
       <h3 className="product__title">{title}</h3>
       <div className="product__block-selector">
